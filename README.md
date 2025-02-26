@@ -19,10 +19,11 @@ ResNet50 모델을 사용해서 흑색종 피부암(melanoma)를 예측했다.
 <성능 분석 결과>
 - ROC Curve 분석 결과: auc 값이 0.984로 높음(모델이 전반적으로 좋은 분류 성능을 보인다는 것을 의미)
 - Confusion matrix 분석 결과:
-  TP(melanoma인것을 melanoma로 잘 예측한 경우): 494
-  FN(melanoma인것을 benign으로 잘못 예측한 경우): 17
-  FP(benign인것을 melanoma로 잘못 예측한 경우): 693
-  TN(benign인것을 benign으로 잘 예측한 경우): 2562
+  - TP(melanoma인것을 melanoma로 잘 예측한 경우): 494
+  - FN(melanoma인것을 benign으로 잘못 예측한 경우): 17
+  - FP(benign인것을 melanoma로 잘못 예측한 경우): 693
+  - TN(benign인것을 benign으로 잘 예측한 경우): 2562
+  
   Melanoma(흑색종)에 대한 False Negative(17건)가 적어, 모델이 Melanoma를 잘 감지하고 있다는 점은 긍정적이다.
   그러나 Benign(양성) 데이터를 Melanoma로 오분류한 경우(693건)가 많습니다. 이는 정밀도(Precision) 저하로 이어진다.
 - test Result
