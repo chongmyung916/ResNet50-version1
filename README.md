@@ -54,3 +54,26 @@ ResNet50 모델을 사용해서 흑색종 피부암(melanoma)를 예측했다.
 - 모델은 Melanoma를 잘 탐지(Recall ↑)하지만, Melanoma로 잘못 예측(Precision ↓)하는 경우가 많다.
 - 피부암 진단에서는 False Negative가 중요한 문제이므로 재현율이 높은 것은 장점이지만, Precision도 고려해야 한다.(threshold 조정, class imbalance 해결, FP 감소)
 - 낮은 Precision을 높이는 것이 중요하다고 판단했다.
+
+# ResNet50-version2
+
+<실험 세팅>
+- version1에서는 train data에 대해서 데이터 증강을 적용해서 학습시켰다.
+- 그러나 학습과정에서 많은 샘플들이 melanoma를 과도하게 예측하는 경향이 발생해서 melanoma로 분류했을 가능성이 커졌을 것이라고 생각했다.
+- 따라서 낮은 precision을 보완하기 위해서 version2에서는 데이터 증강 없이 실험을 진행해보기로 결정했다.
+
+
+<성능 분석 결과>
+- test result
+  - Loss: 0.4149
+  - Accuracy: 85.79% (Class 0: 84.12%, Class 1: 96.48%)
+  - AUC: 0.9819
+  - Precision: 0.4881
+  - Recall: 0.9648
+  - F1 Score: 0.6483
+- version1의 precision(0.4162)에 비해서 version2의 precision(0.4881)은 조금 상승한 경향이 보였지만 그래도 아직 낮은 precision을 가지고 있다.
+
+
+<결론 & 대안-version2>
+- 모델의 precision값이 소폭 상승하였으나 아직 낮은 precision을 가지고 있다.
+- precision을 높여 recall과의 조화를 맞추고 f1-score도 더 높이기 위한 방법을 찾아야겠다는 생각을 했다.
